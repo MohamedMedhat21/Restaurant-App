@@ -7,19 +7,13 @@
     tools:context=".TimerActivity">
 
     <TextView
-        android:id="@+id/timeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="10:00"
-        android:textSize="15pt"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="232dp" />
-
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="354dp" />
+        android:id="@+id/textView"
+        android:layout_width="151dp"
+        android:layout_height="147dp"
+        android:layout_marginTop="252dp"
+        android:text="TextView"
+        android:textSize="12pt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
