@@ -10,16 +10,23 @@
         <item>Burger</item>
         <item>Pizza</item>
         <item>Juice</item>
+        <item>Sandwich</item>
+        <item>Pasta</item>
     </string-array>
 
     <string-array name = "Description">
-        <item>randomm</item>
-        <item>randomm</item>
-        <item>randomm</item>
+        <item>Sandwich with beef</item>
+        <item>Pizza with mozzarella</item>
+        <item>Mango juice</item>
+        <item>Have different types</item>
+        <item>Pasta with red sauce</item>
     </string-array>
+
     <string-array name="Prices">
         <item>20</item>
+        <item>5</item>
+        <item>10</item>
         <item>30</item>
-        <item>40</item>
+        <item>35</item>
     </string-array>
 </resources>
