@@ -20,7 +20,7 @@ public class TimerActivity extends AppCompatActivity {
                 mTextField.setText("Time remaining: " + (millisUntilFinished / 1000) / 60 + " : " + (millisUntilFinished / 1000) % 60);
             }
             public void onFinish() {
-                mTextField.setText("done!");
+                mTextField.setText("Done!");
             }
         }.start();
     }

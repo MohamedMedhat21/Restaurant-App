@@ -51,7 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public boolean validateLogin(String name, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from user where name = ?", new String[]{name});
+        Cursor cursor = db.rawQuery("select * from user where name = ? and password = ?", new String[]{name, password});
         int cnt = cursor.getCount();
         cursor.close();
         db.close();

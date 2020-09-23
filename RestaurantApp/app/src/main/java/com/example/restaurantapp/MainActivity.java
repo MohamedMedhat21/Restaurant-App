@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.setTitle("Sign In");
 
         db = new DatabaseHelper(this);
         name = findViewById(R.id.userNameText);
@@ -38,8 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     if (db.validateLogin(nameText, passText)) {
                         Toast.makeText(getApplicationContext(), "Welcome", Toast.LENGTH_LONG).show();
-                        // for testing
-                        Intent i = new Intent(MainActivity.this, TimerActivity.class);
+                        Intent i = new Intent(MainActivity.this, MenuActivity.class);
                         startActivity(i);
                     }
                     else {
