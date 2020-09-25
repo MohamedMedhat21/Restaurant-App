@@ -40,7 +40,7 @@ public class SignUpActivity extends AppCompatActivity {
                     int flag = db.validateSignUp(emailText, nameText);
                     if (flag == 0) {
                         db.insert(emailText, nameText, passText);
-                        Toast.makeText(getApplicationContext(), "Registered Successfully 100 ful", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_LONG).show();
                         Intent i = new Intent(SignUpActivity.this, MainActivity.class);
                         startActivity(i);
                     }
@@ -48,8 +48,11 @@ public class SignUpActivity extends AppCompatActivity {
                         if (flag == 1) {
                             Toast.makeText(getApplicationContext(), "email is taken", Toast.LENGTH_LONG).show();
                         }
-                        else {
+                        if (flag == 2) {
                             Toast.makeText(getApplicationContext(), "username is taken", Toast.LENGTH_LONG).show();
+                        }
+                        if (flag == 3) {
+                            Toast.makeText(getApplicationContext(), "email must end with @gmail.com", Toast.LENGTH_LONG).show();
                         }
                     }
                 }

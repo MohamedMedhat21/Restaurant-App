@@ -13,7 +13,7 @@ public class DatabaseHelperMenu extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table menu(id integer primary key autoincrement, description text not null, price integer not null, img image not null)");
+        db.execSQL("create table menu(title text not null, description text not null, price integer not null, time integer not null, img image not null)");
         //id can be deleted as there is (rowed) which is builtin in SQLite
     }
 
@@ -23,10 +23,12 @@ public class DatabaseHelperMenu extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void insert(String description, int price, byte[] img) {
+    public void insert(String title, String description, int price, int time, byte[] img) {
         ContentValues obj = new ContentValues();
+        obj.put("title", title);
         obj.put("description", description);
         obj.put("price", price);
+        obj.put("time", time);
         obj.put("img", img);
         SQLiteDatabase db = this.getWritableDatabase();
         db.insert("menu", null, obj);

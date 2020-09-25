@@ -1,6 +1,7 @@
 package com.example.restaurantapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,18 +13,23 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    String MenuItemsData[], MenuItemsDescriptionData[], MenuItemsPricesData[];
-    int images[];
+    String MenuItemsData[], MenuItemsDescriptionData[], MenuItemsPricesData[], itemsTimeStr[];
+    int images[], itemsCnt[];
     Context context;
     TextView total;
 
-    public MyAdapter(Context context, String MenuItemsData[], String MenuItemsDescriptionData[], String MenuItemsPricesData[], int images[], TextView total){
+    public MyAdapter(Context context, String MenuItemsData[], String MenuItemsDescriptionData[], String MenuItemsPricesData[], String itemsTimeStr[],
+                     int images[], TextView total){
         this.context = context;
         this.MenuItemsData = MenuItemsData;
         this.MenuItemsDescriptionData = MenuItemsDescriptionData;
         this.MenuItemsPricesData = MenuItemsPricesData;
+        this.itemsTimeStr = itemsTimeStr;
         this.images = images;
         this.total = total;
+        itemsCnt = new int[images.length];
+        for (int i = 0; i < itemsCnt.length; i++)
+            itemsCnt[i] = 0;
     }
 
     @NonNull
@@ -35,7 +41,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
         holder.itemTitleNameTxt.setText(MenuItemsData[position]);
         holder.itemDescriptionTxt.setText(MenuItemsDescriptionData[position]);
         holder.itemPriceTxt.setText(MenuItemsPricesData[position]);
@@ -43,6 +49,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                itemsCnt[position]++;
                 holder.itemCntrTxt.setText(String.valueOf(Integer.parseInt(holder.itemCntrTxt.getText().toString()) + 1));
                 total.setText(String.valueOf(Integer.parseInt(holder.itemPriceTxt.getText().toString()) + Integer.parseInt(total.getText().toString())));
             }
@@ -50,6 +57,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.minusBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                if (itemsCnt[position] > 0)
+                    itemsCnt[position]--;
                 int totalPrice = Integer.parseInt(total.getText().toString());
                 int priceOfItem = Integer.parseInt(holder.itemPriceTxt.getText().toString());
                 int cntrOfItem = Integer.parseInt(holder.itemCntrTxt.getText().toString());
@@ -63,6 +72,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public int getItemCount() {
         return MenuItemsData.length;
+    }
+
+    public int getMaxTime() {
+        int mx = -1;
+        for (int i = 0; i < itemsCnt.length; i++) {
+            if (itemsCnt[i] > 0)
+                mx = Math.max(mx, Integer.parseInt(itemsTimeStr[i]));
+        }
+        return mx;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{

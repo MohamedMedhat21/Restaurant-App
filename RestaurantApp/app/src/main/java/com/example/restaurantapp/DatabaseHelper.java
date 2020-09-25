@@ -46,6 +46,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return 1;
         if (cnt_name > 0)
             return 2;
+        if (!email.endsWith("@gmail.com"))
+            return 3;
         return 0;
     }
 
