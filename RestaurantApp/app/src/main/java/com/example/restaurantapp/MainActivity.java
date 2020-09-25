@@ -12,9 +12,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    DatabaseHelper db;
-    TextView name, pass;
-    Button loginButton, signUpButton;
+    private DatabaseHelper db;
+    private TextView name, pass;
+    private Button loginButton, signUpButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +35,12 @@ public class MainActivity extends AppCompatActivity {
                 String passText = pass.getText().toString();
                 if (nameText.equals("") || passText.equals("")) {
                     Toast.makeText(getApplicationContext(), "Please fill all the data", Toast.LENGTH_LONG).show();
-                }
-                else {
-                    if (db.validateLogin(nameText, passText)) {
+                } else {
+                    if (db.validation(nameText, passText)) {
                         Toast.makeText(getApplicationContext(), "Welcome", Toast.LENGTH_LONG).show();
                         Intent i = new Intent(MainActivity.this, MenuActivity.class);
                         startActivity(i);
-                    }
-                    else {
+                    } else {
                         Toast.makeText(getApplicationContext(), "Incorrect Email or Password", Toast.LENGTH_LONG).show();
                     }
                 }

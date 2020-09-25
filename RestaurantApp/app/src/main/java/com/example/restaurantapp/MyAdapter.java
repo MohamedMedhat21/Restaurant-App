@@ -13,13 +13,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    String MenuItemsData[], MenuItemsDescriptionData[], MenuItemsPricesData[], itemsTimeStr[];
-    int images[], itemsCnt[];
-    Context context;
-    TextView total;
+    private String MenuItemsData[], MenuItemsDescriptionData[], MenuItemsPricesData[], itemsTimeStr[];
+    private int images[], itemsCnt[];
+    private Context context;
+    private TextView total;
 
     public MyAdapter(Context context, String MenuItemsData[], String MenuItemsDescriptionData[], String MenuItemsPricesData[], String itemsTimeStr[],
-                     int images[], TextView total){
+                     int images[], TextView total) {
         this.context = context;
         this.MenuItemsData = MenuItemsData;
         this.MenuItemsDescriptionData = MenuItemsDescriptionData;
@@ -54,7 +54,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 total.setText(String.valueOf(Integer.parseInt(holder.itemPriceTxt.getText().toString()) + Integer.parseInt(total.getText().toString())));
             }
         });
-        holder.minusBtn.setOnClickListener(new View.OnClickListener(){
+        holder.minusBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (itemsCnt[position] > 0)
@@ -62,9 +62,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 int totalPrice = Integer.parseInt(total.getText().toString());
                 int priceOfItem = Integer.parseInt(holder.itemPriceTxt.getText().toString());
                 int cntrOfItem = Integer.parseInt(holder.itemCntrTxt.getText().toString());
-                if(cntrOfItem == 0) priceOfItem = 0;
+                if (cntrOfItem == 0) priceOfItem = 0;
                 total.setText(String.valueOf(Math.max(totalPrice - priceOfItem, 0)));
-                holder.itemCntrTxt.setText(String.valueOf(Math.max(Integer.parseInt(holder.itemCntrTxt.getText().toString()) - 1 , 0)));
+                holder.itemCntrTxt.setText(String.valueOf(Math.max(Integer.parseInt(holder.itemCntrTxt.getText().toString()) - 1, 0)));
             }
         });
     }
@@ -83,7 +83,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         return mx;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView itemTitleNameTxt, itemDescriptionTxt, itemPriceTxt, itemCntrTxt;
         ImageView myImage;
         Button addBtn;

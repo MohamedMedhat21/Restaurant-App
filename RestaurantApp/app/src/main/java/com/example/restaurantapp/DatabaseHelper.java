@@ -32,7 +32,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public int validateSignUp(String email, String name) {
+    public int validation(String email, String name,String pass) {
         // 0 valid, 1 email exist, 2 userName exist
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from user where email = ?", new String[]{email});
@@ -48,10 +48,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return 2;
         if (!email.endsWith("@gmail.com"))
             return 3;
+        if(pass.length()<5)
+            return 4;
         return 0;
     }
 
-    public boolean validateLogin(String name, String password) {
+    public boolean validation(String name, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from user where name = ? and password = ?", new String[]{name, password});
         int cnt = cursor.getCount();

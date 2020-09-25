@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class TimerActivity extends AppCompatActivity {
-    TextView mTextField;
+    private TextView mTextField;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class TimerActivity extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 mTextField.setText("Time remaining: " + (millisUntilFinished / 1000) / 60 + " : " + (millisUntilFinished / 1000) % 60);
             }
+
             public void onFinish() {
                 mTextField.setText("Done!");
             }

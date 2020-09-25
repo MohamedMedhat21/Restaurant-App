@@ -23,13 +23,13 @@ import java.util.ArrayList;
 
 public class MenuActivity extends AppCompatActivity {
 
-    DatabaseHelperMenu db;
-    RecyclerView recyclerView;
-    TextView total;
-    Button checkoutButton;
-    MyAdapter myAdapter;
-    String menuItemsStr[], itemsDescriptionStr[], itemsPricesStr[], itemsTimeStr[];
-    int images[] = {R.drawable.burger, R.drawable.pizza, R.drawable.juice, R.drawable.sandwich, R.drawable.pasta};
+    private DatabaseHelperMenu db;
+    private RecyclerView recyclerView;
+    private TextView total;
+    private Button checkoutButton;
+    private MyAdapter myAdapter;
+    private String menuItemsStr[], itemsDescriptionStr[], itemsPricesStr[], itemsTimeStr[];
+    private int images[] = {R.drawable.burger, R.drawable.pizza, R.drawable.juice, R.drawable.sandwich, R.drawable.pasta};
 //    ArrayList<byte[]> imagesFromDatabase;
 
     @Override
@@ -44,7 +44,7 @@ public class MenuActivity extends AppCompatActivity {
         itemsDescriptionStr = getResources().getStringArray(R.array.Description);
         itemsPricesStr = getResources().getStringArray(R.array.Prices);
         itemsTimeStr = getResources().getStringArray(R.array.Time);
-        total = (TextView)findViewById(R.id.totalNumbTxt);
+        total = (TextView) findViewById(R.id.totalNumbTxt);
         checkoutButton = findViewById(R.id.checkoutBtn);
 
         myAdapter = new MyAdapter(this, menuItemsStr, itemsDescriptionStr, itemsPricesStr, itemsTimeStr, images, total);
@@ -57,10 +57,10 @@ public class MenuActivity extends AppCompatActivity {
                 int time = myAdapter.getMaxTime();
                 if (time == -1) {
                     Toast.makeText(getApplicationContext(), "No items was selected", Toast.LENGTH_LONG).show();
-                }
-                else {
+                } else {
                     Intent i = new Intent(MenuActivity.this, TimerActivity.class);
                     i.putExtra("timer", time);
+                    Toast.makeText(getApplicationContext(), "Thanks, We are preparing your order", Toast.LENGTH_LONG).show();
                     startActivity(i);
                 }
             }

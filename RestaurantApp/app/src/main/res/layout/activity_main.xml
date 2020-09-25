@@ -42,23 +42,24 @@
         app:layout_constraintStart_toStartOf="@+id/passwordText"
         app:layout_constraintTop_toBottomOf="@+id/passwordText" />
 
-    <Button
-        android:id="@+id/signUpButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:text="sign Up"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
-        app:layout_constraintStart_toEndOf="@+id/textView2" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="91dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginBottom="75dp"
         android:text="Doesn't have an account yet?"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/signUpButton" />
+
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="71dp"
+        android:text="sign Up"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="?android:attr/borderlessButtonStyle"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
