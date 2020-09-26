@@ -63,6 +63,7 @@ public class MenuActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Thanks, We are preparing your order", Toast.LENGTH_LONG).show();
                     startActivity(i);
                     finish();
+
                 }
             }
         });

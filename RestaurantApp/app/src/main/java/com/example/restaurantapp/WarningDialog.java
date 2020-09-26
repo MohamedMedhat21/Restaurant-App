@@ -19,8 +19,7 @@ public class WarningDialog extends AppCompatDialogFragment {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         exitt=true;
-                        Intent ii=new Intent(getActivity(),WelcomeActivity.class);
-                        startActivity(ii);
+                        getActivity().finish();
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
