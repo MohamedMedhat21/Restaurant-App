@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class TimerActivity extends AppCompatActivity {
-    private TextView mTextField;
+    private TextView mTextField,timelefttext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,13 +20,15 @@ public class TimerActivity extends AppCompatActivity {
         Intent i = getIntent();
         int timeLeft = i.getIntExtra("timer", 0) * 1000 * 60;
         mTextField = findViewById(R.id.textView);
+        timelefttext = findViewById(R.id.timeLeft);
         new CountDownTimer(timeLeft, 1000) {
             public void onTick(long millisUntilFinished) {
-                mTextField.setText("Time remaining: " + (millisUntilFinished / 1000) / 60 + " : " + (millisUntilFinished / 1000) % 60);
+                mTextField.setText("Time remaining: ");
+                timelefttext.setText((millisUntilFinished / 1000) / 60 + " : " + (millisUntilFinished / 1000) % 60);
             }
 
             public void onFinish() {
-                mTextField.setText("Done!");
+                mTextField.setText("Your Order is Ready!");
             }
         }.start();
     }

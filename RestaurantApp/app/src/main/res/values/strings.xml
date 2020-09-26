@@ -6,7 +6,7 @@
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
-    <string-array name = "menuItems">
+    <string-array name="menuItems">
         <item>Burger</item>
         <item>Pizza</item>
         <item>Juice</item>
@@ -14,7 +14,7 @@
         <item>Pasta</item>
     </string-array>
 
-    <string-array name = "Description">
+    <string-array name="Description">
         <item>Sandwich with beef</item>
         <item>Pizza with mozzarella</item>
         <item>Mango juice</item>

@@ -62,6 +62,7 @@ public class MenuActivity extends AppCompatActivity {
                     i.putExtra("timer", time);
                     Toast.makeText(getApplicationContext(), "Thanks, We are preparing your order", Toast.LENGTH_LONG).show();
                     startActivity(i);
+                    finish();
                 }
             }
         });

@@ -6,50 +6,94 @@
     android:layout_height="match_parent"
     tools:context=".SignUpActivity">
 
-    <EditText
-        android:id="@+id/emailText"
+    <ImageView
+        android:id="@+id/backimage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/beAMember"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.248"
+        app:srcCompat="@drawable/back" />
+
+    <TextView
+        android:id="@+id/beAMember"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="223dp"
+        android:fontFamily="@font/bold"
+        android:text="Join Us!"
+        android:textColor="@color/gray"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toTopOf="@+id/emailText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.797" />
+
+    <EditText
+        android:id="@+id/emailText"
+        android:layout_width="310dp"
+        android:layout_height="50sp"
+        android:background="@drawable/input_field"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
         android:text=""
+        android:textColorHint="@color/gray"
+        app:layout_constraintBottom_toTopOf="@+id/userNameText2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/passwordText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="@+id/userNameText2"
-        app:layout_constraintTop_toBottomOf="@+id/userNameText2" />
-
-    <Button
-        android:id="@+id/signUpButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="84dp"
-        android:ems="10"
-        android:text="Sign Up"
-        app:layout_constraintStart_toStartOf="@+id/passwordText2"
-        app:layout_constraintTop_toBottomOf="@+id/passwordText2" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.93" />
 
     <EditText
         android:id="@+id/userNameText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="310dp"
+        android:layout_height="50sp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/input_field"
         android:ems="10"
         android:hint="User Name"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/emailText"
-        app:layout_constraintTop_toBottomOf="@+id/emailText" />
+        android:textColorHint="@color/gray"
+        app:layout_constraintBottom_toTopOf="@+id/passwordText2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/passwordText2"
+        android:layout_width="310dp"
+        android:layout_height="50sp"
+        android:layout_marginBottom="212dp"
+        android:background="@drawable/input_field"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColorHint="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/signUpButton2"
+        android:layout_width="162dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/button"
+        android:ems="10"
+        android:fontFamily="@font/regular"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordText2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
