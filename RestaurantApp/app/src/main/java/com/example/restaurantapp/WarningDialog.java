@@ -9,7 +9,6 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
 public class WarningDialog extends AppCompatDialogFragment {
-    public Boolean exitt=false;
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -18,7 +17,6 @@ public class WarningDialog extends AppCompatDialogFragment {
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        exitt=true;
                         getActivity().finish();
                     }
                 })
