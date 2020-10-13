@@ -74,7 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/light"
-        android:text="Doesn't have an account yet?"
+        android:text="Don't have an account yet?"
         android:textColor="@color/gray"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
