@@ -4,20 +4,20 @@ Due to Corona virus and applying social distancing. This *Android* application w
 
 The App starts with a welcome screen: 
 
-<img src="https://raw.githubusercontent.com/MohamedMedhat21/Restaurant-App/master/Pictures/WelcomeScreen.png" alt="WelcomeScreen" style="zoom:60%;" />
+<div style="text-align:center"><img src="https://raw.githubusercontent.com/MohamedMedhat21/Restaurant-App/master/Pictures/WelcomeScreen.png" alt="WelcomeScreen" style="zoom:30%;" />
 
 If this is the first time for the user, then he/she has to sign up first:
 
-<img src="https://raw.githubusercontent.com/MohamedMedhat21/Restaurant-App/master/Pictures/SignUpScreen.png" alt="SignUpScreen" style="zoom:60%;" />
+<div style="text-align:center"><img src="https://raw.githubusercontent.com/MohamedMedhat21/Restaurant-App/master/Pictures/SignUpScreen.png" alt="SignUpScreen" style="zoom:30%;" />
 
 Or can login if he/she already has an account
 
-<img src="https://raw.githubusercontent.com/MohamedMedhat21/Restaurant-App/master/Pictures/LoginScreen.png" alt="LoginScreen" style="zoom:60%;" />
+<div style="text-align:center"><img src="https://raw.githubusercontent.com/MohamedMedhat21/Restaurant-App/master/Pictures/LoginScreen.png" alt="LoginScreen" style="zoom:30%;" />
 
 After Logging in, The user sees a menu screen in which he/she can order food
 
-<img src="https://raw.githubusercontent.com/MohamedMedhat21/Restaurant-App/master/Pictures/MenuScreen.png" alt="MenuScreen" style="zoom:60%;" />
+<div style="text-align:center"><img src="https://raw.githubusercontent.com/MohamedMedhat21/Restaurant-App/master/Pictures/MenuScreen.png" alt="MenuScreen" style="zoom:30%;" />
 
 Finally, After checking out, the user sees a timer screen which indicates the time left for his food to be prepared.
 
-<img src="https://raw.githubusercontent.com/MohamedMedhat21/Restaurant-App/master/Pictures/TimerScreen.png" alt="TimerScreen" style="zoom:60%;" />
+<div style="text-align:center"><img src="https://raw.githubusercontent.com/MohamedMedhat21/Restaurant-App/master/Pictures/TimerScreen.png" alt="TimerScreen" style="zoom:30%;" />
